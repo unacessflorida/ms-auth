@@ -3,6 +3,7 @@ package cl.unacessflorida.auth.controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import jakarta.validation.Valid;
 
 import cl.unacessflorida.auth.dto.UsuarioDTO;
 import cl.unacessflorida.auth.model.Usuario;
@@ -19,7 +20,7 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<Usuario> registrar(@RequestBody UsuarioDTO usuario) {
+    public ResponseEntity<Usuario> registrar(@Valid @RequestBody UsuarioDTO usuario) {
         Usuario nuevoUsuario = service.registrar(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoUsuario);
     }

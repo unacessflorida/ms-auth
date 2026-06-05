@@ -1,11 +1,9 @@
 package cl.unacessflorida.auth.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity
 @Table(name = "usuarios")
-@Data 
 public class Usuario {
     
     @Id
@@ -13,6 +11,40 @@ public class Usuario {
     private Long id;
     
     private String username;
-    private String password; // Se guardará plano para máxima velocidad
-    private String rol;      // ENFERMERA o MATRONA
+    private String password;
+    private String rol;
+
+    public Usuario() {}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 }

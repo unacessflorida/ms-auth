@@ -5,9 +5,9 @@ import org.mindrot.jbcrypt.BCrypt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cl.unacessflorida.auth.Repository.UsuarioRepository;
 import cl.unacessflorida.auth.dto.UsuarioDTO;
 import cl.unacessflorida.auth.model.Usuario;
+import cl.unacessflorida.auth.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {

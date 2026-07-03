@@ -1,4 +1,4 @@
-package cl.unacessflorida.auth.Repository;
+package cl.unacessflorida.auth.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import cl.unacessflorida.auth.model.Usuario;

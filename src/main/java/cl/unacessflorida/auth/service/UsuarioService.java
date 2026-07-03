@@ -1,6 +1,9 @@
 package cl.unacessflorida.auth.service;
 
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
 import org.mindrot.jbcrypt.BCrypt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,4 +42,8 @@ public class UsuarioService {
         
         return usuarioGuardado;
     }
+
+    public Optional<Usuario> buscarPorUsername(String username) {
+    return repo.findByUsername(username);
+}
 }

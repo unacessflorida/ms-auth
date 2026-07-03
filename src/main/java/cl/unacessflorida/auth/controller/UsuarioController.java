@@ -24,4 +24,11 @@ public class UsuarioController {
         Usuario nuevoUsuario = service.registrar(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoUsuario);
     }
+    
+    @GetMapping("/{username}")
+public ResponseEntity<Usuario> buscarPorUsername(@PathVariable String username) {
+    return service.buscarPorUsername(username)
+        .map(ResponseEntity::ok)
+        .orElse(ResponseEntity.notFound().build());
+}
 }
